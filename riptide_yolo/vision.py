@@ -339,12 +339,11 @@ class yolov5_ros(Node):
 
                     # draw cv rect
                     rect = bounding_box_2d[counter]
-                    print(f"BBOX: {rect}")
-
-
-                    # image = cv2.rectangle(image, rect[0], rect[1], (0, 250, 0), 2)
-                    # image = cv2.putText(image, f"{self.object_ids[classIds[counter]]} : {obj.confidence}", rect[0],
-                                                    # cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
+                    corners = [(int(rect[0][0]), int(rect[0][1])), (int(rect[3][0]), int(rect[3][1]))]
+                    # LOGGER.info(f"BBOX points : {corners[0]}, {corners[1]}")
+                    image = cv2.rectangle(image, corners[0], corners[1], (0, 250, 0), 2)
+                    image = cv2.putText(image, f"{self.object_ids[classIds[counter]]} : {round(obj.confidence, 2)}", corners[0],
+                                                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
 
                     object_hypothesis.pose.pose.position = position
                     LOGGER.info(f"Adjusted Position {position}")
