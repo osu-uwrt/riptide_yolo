@@ -67,9 +67,9 @@ class yolov5_ros(Node):
 
         # self.pub_bbox = self.create_publisher(BoundingBoxes, 'yolov5/bounding_boxes', 10)
         self.pub_image = self.create_publisher(Image, 'yolov5/image_raw', 10)
-        self.pub_detection = self.create_publisher(Image, '/tempest/yolov5/image_detection', 10)
-        self.pub_det3d = self.create_publisher(Detection3DArray, '{}/yolo/detected_objects'.format(self.get_namespace()), 10)
-        self.image_pub = self.create_publisher(Image, '/tempest/stereo/left_raw/image_raw_color', 5)
+        self.pub_detection = self.create_publisher(Image, 'yolov5/image_detection', 10)
+        self.pub_det3d = self.create_publisher(Detection3DArray, 'yolo/detected_objects', 10)
+        self.image_pub = self.create_publisher(Image, 'stereo/left_raw/image_raw_color', 5)
         self.camera_model = None
         self.left_info = None
         self.right_info = None

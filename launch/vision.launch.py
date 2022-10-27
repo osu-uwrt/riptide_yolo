@@ -12,7 +12,7 @@ def generate_launch_description():
         package="yolov5_ros", executable="vision",
         parameters=[
                        {"weights":os.path.join(riptide_vision_share_dir,"weights/last.pt")},
-                       {"data":os.path.join(riptide_vision_share_dir,"config/pool.yaml")}
+                       {"data":os.path.join(riptide_vision_share_dir,"data/pool.yaml")}
                    ],
     )
 
