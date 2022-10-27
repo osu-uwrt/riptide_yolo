@@ -4,7 +4,7 @@ import os
 from glob import glob
 from urllib.request import urlretrieve
 
-package_name = 'yolov5_ros'
+package_name = 'riptide_yolo'
 
 packages = list(find_packages())
 packages.append(package_name)
