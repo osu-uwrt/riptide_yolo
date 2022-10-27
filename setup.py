@@ -36,12 +36,12 @@ setup(
     author_email="ray255ar@gmail.com",
     maintainer='Ar-Ray-code',
     maintainer_email="ray255ar@gmail.com",
-    description='YOLOv5 + ROS2 Foxy',
+    description='YOLOv5 + ROS2',
     license='GNU GENERAL PUBLIC LICENSE Version 3',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'vision = yolov5_ros.vision:ros_main'
+            'vision = riptide_yolo.vision:ros_main'
         ],
     },
     py_modules=cleanModules

@@ -6,10 +6,10 @@ from ament_index_python.packages import get_package_share_directory
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
-    riptide_vision_share_dir = get_package_share_directory('yolov5_ros')
+    riptide_vision_share_dir = get_package_share_directory('riptide_yolo')
 
     riptide_vision = launch_ros.actions.Node(
-        package="yolov5_ros", executable="vision",
+        package="riptide_yolo", executable="vision",
         parameters=[
                        {"weights":os.path.join(riptide_vision_share_dir,"weights/last.pt")},
                        {"data":os.path.join(riptide_vision_share_dir,"data/pool.yaml")}
